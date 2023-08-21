@@ -1,0 +1,22 @@
+[package]
+name = "tutor-nodb"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+axum = "0.6.20"
+tokio = { version = "1.32.0", features = ["full"] }
+serde = { version = "1.0.185", features = ["derive"] }
+serde_json = "1.0.68"
+tracing = "0.1.37"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+poem = "1.3.57"
+poem-openapi = { version = "2", features = ["swagger-ui", "openapi-explorer"]}
+
+[[bin]]
+name="basic-server"
+
+[[bin]]
+name="basic-poem-server"
