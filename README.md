@@ -1,6 +1,6 @@
 # Rust Servers, Services, and Apps
 
-Rust Servers, Services, and Apps with Axum and Poem instead of Actix
+Rust Servers, Services, and Apps with Axum, Poem, and Actix-web 4
 
 Prabhu Eshwarla
 
