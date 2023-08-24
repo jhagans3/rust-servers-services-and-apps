@@ -1,10 +1,11 @@
-use crate::state::AppState;
-use axum::extract::State;
-use axum::Json;
-use serde_json::{json, Value};
-use std::sync::Arc;
+use actix_web::web::{Data, Json};
+use actix_web::{get, Responder};
+use serde_json::json;
 
-pub async fn health_check(state: State<Arc<AppState>>) -> Json<Value> {
+use crate::state::AppState;
+
+#[get("/health")]
+pub async fn health_check(state: Data<AppState>) -> impl Responder {
     let app_state = state.clone();
     let health_check_response = &app_state.health_check_response;
     let mut visit_count = app_state.visit_count.lock().unwrap();

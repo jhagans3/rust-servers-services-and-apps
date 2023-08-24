@@ -1,14 +1,11 @@
 use ::axum::{routing::get, Router};
-use std::sync::{Arc, Mutex};
+use std::sync::Arc;
 
 use crate::handlers::axum::health_check;
-use crate::state::axum::AppState;
+use crate::state::axum::app_state;
 
 pub fn axum_router() -> Router {
-    let app_state = AppState {
-        health_check_response: "I'm good. You've already asked me ".to_string(),
-        visit_count: Mutex::new(0),
-    };
+    let app_state = app_state();
 
     let shared_data = Arc::new(app_state);
     Router::new()
