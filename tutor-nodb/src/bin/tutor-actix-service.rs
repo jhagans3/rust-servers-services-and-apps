@@ -1,13 +1,10 @@
 use actix_web::{App, HttpServer};
 
-use nodb::handlers::actix::health_check;
-use nodb::state::actix::app_state;
+use nodb::routes::actix::actix_router;
 
 #[tokio::main]
 async fn main() -> std::io::Result<()> {
-    let app_data = app_state();
-
-    HttpServer::new(move || App::new().app_data(app_data.clone()).service(health_check))
+    HttpServer::new(move || App::new().configure(actix_router))
         .bind("127.0.0.1:3000")?
         .run()
         .await
