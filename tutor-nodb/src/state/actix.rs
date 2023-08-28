@@ -6,5 +6,6 @@ pub fn app_state() -> Data<AppState> {
     Data::new(AppState {
         health_check_response: "Actix is good. You've already asked me".to_string(),
         visit_count: Mutex::new(0),
+        courses: Mutex::new(Vec::new()),
     })
 }
