@@ -2,7 +2,7 @@
 name = "nodb"
 version = "0.1.0"
 edition = "2021"
-# default-run="tutor-poem-service
+# default-run="tutor-poem-service"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -19,13 +19,16 @@ poem-openapi = { version = "3", features = ["swagger-ui", "openapi-explorer"]}
 chrono = {version = "0.4.11", features = ["serde"]}
 
 [[bin]]
-name="basic-actix-server"
+name = "basic-actix-server"
 
 [[bin]]
-name="basic-axum-server"
+name = "basic-axum-server"
 
 [[bin]]
-name="basic-poem-server"
+name = "basic-poem-server"
 
 [[bin]]
-name="tutor-axum-service"
+name = "tutor-actix-service"
+
+[[bin]]
+name = "tutor-axum-service"
