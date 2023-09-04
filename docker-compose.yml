@@ -1,5 +1,5 @@
 # docker-compose up -d
-# docker inspect <CONTAINER_ID 4 postgres container>
+# docker inspect <CONTAINER_ID> for pgadmin connection to pg
 
 version: '3.8'
 services:
