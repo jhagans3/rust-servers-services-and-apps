@@ -1,5 +1,5 @@
 /*
-rust-servers-services-and-apps$ cargo modules generate tree --types --lib
+rust-servers-services-and-apps$ cargo modules generate tree --types --lib -p nodb
 
 crate nodb
 ├── mod handlers: pub
@@ -8,7 +8,10 @@ crate nodb
 │   └── mod poem: pub
 │       └── struct EzCourseApi: pub
 ├── mod models: pub
-│   └── struct Course: pub
+│   ├── struct Course: pub
+│   ├── mod actix: pub
+│   └── mod poem: pub
+│       └── struct Course: pub
 ├── mod routes: pub
 │   ├── mod actix: pub
 │   ├── mod axum: pub
@@ -18,7 +21,7 @@ crate nodb
     ├── mod actix: pub
     ├── mod axum: pub
     └── mod poem: pub
-
+        └── struct AppState: pub
 
 
 */
