@@ -1,8 +1,5 @@
-use std::sync::Arc;
-
 use nodb::routes::poem::app;
-use poem::{listener::TcpListener, EndpointExt, Route};
-use poem_openapi::OpenApiService;
+use poem::listener::TcpListener;
 
 #[tokio::main]
 async fn main() -> Result<(), std::io::Error> {

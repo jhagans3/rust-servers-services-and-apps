@@ -1,4 +1,6 @@
-use actix_web::web::Json;
+pub mod actix;
+pub mod poem;
+
 use chrono::NaiveDateTime;
 use serde::{Deserialize, Serialize};
 
@@ -8,15 +10,4 @@ pub struct Course {
     pub course_id: Option<i32>,
     pub course_name: String,
     pub posted_time: Option<NaiveDateTime>,
-}
-
-impl From<Json<Course>> for Course {
-    fn from(course: Json<Course>) -> Self {
-        Course {
-            tutor_id: course.tutor_id,
-            course_id: course.course_id,
-            course_name: course.course_name.clone(),
-            posted_time: course.posted_time,
-        }
-    }
 }

@@ -1,5 +1,11 @@
-use crate::state::AppState;
+use crate::models::poem::Course;
 use std::sync::Mutex;
+
+pub struct AppState {
+    pub health_check_response: String,
+    pub visit_count: Mutex<u32>,
+    pub courses: Mutex<Vec<Course>>,
+}
 
 pub fn app_state() -> AppState {
     AppState {
