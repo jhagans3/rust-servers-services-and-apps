@@ -3,10 +3,11 @@ pub mod axum;
 pub mod poem;
 
 use std::sync::Mutex;
+use utoipa::ToSchema;
 
 use crate::models::Course;
 
-#[derive(Debug)]
+#[derive(Debug, ToSchema)]
 pub struct AppState {
     pub health_check_response: String,
     pub visit_count: Mutex<u32>,
